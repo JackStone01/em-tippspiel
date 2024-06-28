@@ -18,8 +18,8 @@ const db = require('../server/database');
 const { log } = require('console');
 
 const app = express(); // Express App erstellen
-const hostname = '127.0.0.1'; //Hostname vom Server
-const port = 3000; //Port vom Server
+//const hostname = '127.0.0.1'; //Hostname vom Server
+const port = parseInt(process.env.PORT, 10) || 3000;
 
 
 // CSS und Javascript Dateien für HTML-Dateien verfügbar machen
@@ -135,7 +135,7 @@ app.use(function (req, res) {
 
 // Server starten
 app.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/login`);
+  console.log(`Server running on port ${port}`);
 });
 
 module.exports.isAuthenticated = isAuthenticated;
