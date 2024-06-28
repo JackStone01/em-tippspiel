@@ -134,7 +134,7 @@ app.use(function (req, res) {
 
 
 // Server starten
-app.listen(port, hostname, () => {
+app.listen(port() => {
   console.log(`Server running on port ${port}`);
 });
 
